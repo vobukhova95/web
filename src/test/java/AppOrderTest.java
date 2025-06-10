@@ -72,8 +72,9 @@ public class AppOrderTest {
         driver.findElement(By.cssSelector("[data-test-id='name'] input")).sendKeys("Иван Иванов");
         driver.findElement(By.cssSelector("[data-test-id='phone'] input")).sendKeys("+79135432321");
         driver.findElement(By.cssSelector("button")).click();
-        WebElement result = driver.findElement(By.cssSelector(".checkbox__text"));
-        assertEquals("rgba(255, 92, 92, 1)", result.getCssValue("color"));
+        WebElement result = driver.findElement(By.cssSelector(".input_invalid[data-test-id='agreement']"));
+        assertTrue(result.isDisplayed());
+
     }
 
     @Test
